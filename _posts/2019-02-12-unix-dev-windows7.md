@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Unix like development environment on Windows 7
-tags: [unix, development, windows7, environment, terminal]
+tags: [unix, development, windows7, environment, terminal, anaconda, cmder]
 ---
 
 * Conda - default install - don't edit path
