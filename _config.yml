@@ -19,7 +19,7 @@ baseurl: ""
 title: ninezerozeronine
 
 # Short description of your site
-description: Coding, Electronics, and sometimes Art
+description: Coding, Electronics, Technology, and Art
 
 # --- Navigation bar options --- #
 
@@ -28,6 +28,10 @@ navbar-links:
   Tags: "tags"
   About: "about"
   Contact: "contact"
+  Projects:
+    - Hello: "www.google.com"
+    - Foo: "www.bar.com"
+    - baz: "www.monkey.com"
 
 # The navbar supports nesting stuff. e.g.
   # Resources:
@@ -54,9 +58,9 @@ avatar: "/img/logo_padded_512.png"
 #B5CADB - light blue
 #2E3532 - black
 #8B2635 - red
+
 #2274A5 - link blue
 #30A3E5 - hover light blue 
-
 
 navbar-col: "#2C6FA8"
 navbar-text-col: "#ECF3FA"
@@ -141,6 +145,7 @@ url-pretty: "www.ninezerozeronine.com"  # eg. "deanattali.com/beautiful-jekyll"
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
 # disqus: ""
+
 # If you want to use just-comments fill with the API Key
 #just-comments: "ABCD-EFGH-IJKL"
 
