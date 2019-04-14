@@ -58,7 +58,6 @@ I added:
 * sphinx
 * pycodestyle
 * m2-base
-* git
 * sphinx_rtd_theme
 * pytest
 
@@ -67,8 +66,10 @@ I added:
 This is also possible on the command line with:
 
 ```
-conda install --name py2 sphinx pycodestyle m2-base git sphinx_rtd_theme pytest
+conda install --name py2 sphinx pycodestyle m2-base sphinx_rtd_theme pytest
 ```
+
+I've deliberately not installed git with conda as after changing my github password it seems to have trouble using wincred to update the stored password.
 
 Install cmder
 -------------
@@ -133,9 +134,9 @@ A [superuser.com post](https://superuser.com/questions/192550/why-wont-cmd-exit-
 Install Git for Windows
 -----------------------
 
-[Git for Windows](https://git-scm.com/downloads) contains gitk. A quick search didn't reveal an easy way just to install gitk so unfortunately  there’s a little duplication as git is managed by Anaconda.
+[Git for Windows](https://git-scm.com/downloads) contains gitk as well as git
 
-I initially wanted to keep things clean and make no additions to my PATH, however, this meant a cmder shell couldn't find gitk so I left the minimal PATH additions in place when setting it up:
+Make sure git goes onto the path - if not it won't be accessible from the py2 environment in conda.
 
 [![Creating a new cmder task](/img/posts/2019-02-12-unix-python-dev-windows7/git-windows-path.jpg)](/img/posts/2019-02-12-unix-python-dev-windows7/git-windows-path.jpg)
 
