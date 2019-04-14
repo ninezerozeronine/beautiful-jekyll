@@ -3,8 +3,11 @@
 # url is the full website URL
 # baseurl is the website's URL without the hostname
 
+
 # If you are building a simple GitHub user page (https://username.github.io) then use these settings:
-url: "https://username.github.io"
+# url: "https://username.github.io"
+# baseurl: ""
+url: "https://www.ninezerozeronine.com"
 baseurl: ""
 
 # If you are building a GitHub project page then use these settings:
@@ -14,25 +17,24 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: My website
+title: ninezerozeronine
 
 # Short description of your site
-description: A virtual proof that name is awesome!
+description: Coding, Electronics, Technology, and Art
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
-  Author's home: "http://deanattali.com"
+  Projects:
+    - Ground Truths: "http://www.groundtruths.net"
+  Search: "search"
+  Tags: "tags"
+  Contact: "contact"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/avatar-icon.png"
+avatar: "/img/logo_padded_512.png"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
@@ -42,15 +44,24 @@ avatar: "/img/avatar-icon.png"
 
 # Personalize the colors in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#F5F5F5"
-navbar-text-col: "#404040"
-navbar-children-col: "#F5F5F5"
-page-col: "#FFFFFF"
-link-col: "#008AFF"
-hover-col: "#0085A1"
-footer-col: "#F5F5F5"
-footer-text-col: "#777777"
-footer-link-col: "#404040"
+#2C6FA8 - dark blue
+#ECF3FA - off white
+#B5CADB - light blue
+#2E3532 - black
+#8B2635 - red
+
+#2274A5 - link blue
+#30A3E5 - hover light blue 
+
+navbar-col: "#2C6FA8"
+navbar-text-col: "#ECF3FA"
+navbar-children-col: "#2C6FA8"
+page-col: "#ECF3FA"
+link-col: "#2274A5"
+hover-col: "#30A3E5"
+footer-col: "#2C6FA8"
+footer-text-col: "#2E3532"
+footer-link-col: "#2E3532"
 
 # Alternatively, the navbar, footer, and page background can be set to use background images
 # instead of colour
@@ -64,7 +75,7 @@ footer-link-col: "#404040"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Some Person
+  name: Andy Palmer
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
@@ -72,18 +83,19 @@ author:
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
   rss: true
-  email: "someone@example.com"
-  facebook: daattali
-  github: daattali
-  twitter: daattali
+  github: ninezerozeronine
+  twitter: 9zerozero9
+  flickr: ninezerozeronine
+  instagram: ninezerozeronine
+  youtube: ninezerozeronine
+  stackoverflow: 9483515/ninezerozeronine
+  email: ninezerozeroninepublic@gmail.com
+#  facebook: daattali
 #  reddit: yourname
 #  google-plus: +DeanAttali
 #  linkedin: daattali
 #  xing: yourname
-#  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
-#  instagram: deanat78
-#  youtube: user/deanat78
 #  spotify: yourname
 #  telephone: +14159998888
 #  steam: deanat78
@@ -99,7 +111,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "www.ninezerozeronine.com"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 
@@ -124,7 +136,8 @@ url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
 # --- Comments --- #
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-# disqus: ""
+disqus: "ninezerozeronine"
+
 # If you want to use just-comments fill with the API Key
 #just-comments: "ABCD-EFGH-IJKL"
 
