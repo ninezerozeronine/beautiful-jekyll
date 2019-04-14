@@ -5,9 +5,7 @@ tags: [unix, development, windows7, environment, python, anaconda, cmder]
 image: /img/posts/2019-02-12-unix-python-dev-windows7/preview.jpg
 ---
 
-I do most of my development at the office under Linux. I wanted to recreate that
-evironment and have access to some of the same tools at home where my operating
-system in Windows 7.
+I do most of my development at the office under Linux. I wanted to recreate that evironment and have access to some of the same tools at home where my operating system in Windows 7.
 
 Goals
 =====
@@ -26,14 +24,12 @@ My goals were:
 Method
 ======
 
-To do this I used Anaconda for package and Python version management, cmder for
-a Unix like shell and git for windows for gitk access. Here are the steps I took:
+To do this I used Anaconda for package and Python version management, cmder for a Unix like shell and git for windows for gitk access. Here are the steps I took:
 
 Install Anaconda
 ----------------
 
-Install [Anaconda](https://www.anaconda.com/distribution/). I didn't add it to
-my PATH variable or register Anaconda's Python to keep things isolated:
+Install [Anaconda](https://www.anaconda.com/distribution/). I didn't add it to my PATH variable or register Anaconda's Python to keep things isolated:
 
 [![Path options](/img/posts/2019-02-12-unix-python-dev-windows7/anaconda-no-system.jpg)](/img/posts/2019-02-12-unix-python-dev-windows7/anaconda-no-system.jpg)
 
@@ -44,10 +40,7 @@ my PATH variable or register Anaconda's Python to keep things isolated:
 Create a new Anaconda Environment
 ---------------------------------
 
-For now I'm using Python 2 so I called mine `py2`. Creating a new environment
-made sure it was clean and would only include the things I needed. While testing
-I was having issues with Sphinx picking up the wrong Python version if I didn't
-create a new environment.
+For now I'm using Python 2 so I called mine `py2`. Creating a new environment made sure it was clean and would only include the things I needed. While testing I was having issues with Sphinx picking up the wrong Python version if I didn't create a new environment.
 
 [![Creating a new environment](/img/posts/2019-02-12-unix-python-dev-windows7/anaconda-py2-env.jpg)](/img/posts/2019-02-12-unix-python-dev-windows7/anaconda-py2-env.jpg)
 
@@ -80,8 +73,7 @@ conda install --name py2 sphinx pycodestyle m2-base git sphinx_rtd_theme pytest
 Install cmder
 -------------
 
-[cmder](https://cmder.net/) is a standalone executable. I created a `cmder-mini`
-[folder along side my cloned repositories and extracted the contents into there.
+[cmder](https://cmder.net/) is a standalone executable. I created a `cmder-mini` folder along side my cloned repositories and extracted the contents into there.
 
 Configure cmder to launch into the py2 environment
 --------------------------------------------------
@@ -103,11 +95,9 @@ I also set it up to be the default task in the general settings:
 Add aliases to cmder
 --------------------
 
-[The cmder homepage](https://cmder.net/) mentions creating aliases but after
-running alias `ll=ls -l $*` I wasn't getting colours from ls coming through.
+[The cmder homepage](https://cmder.net/) mentions creating aliases but after running alias `ll=ls -l $*` I wasn't getting colours from ls coming through.
 
-Instead I altered the alias file (`C:\dev\cmder_mini\config\user_aliases.cmd` in
-may case) to add a more explicit `ll` alias. The file now contains:
+Instead I altered the alias file (`C:\dev\cmder_mini\config\user_aliases.cmd` in my case) to add a more explicit `ll` alias. The file now contains:
 
 ```
 ;= @echo off
@@ -138,42 +128,40 @@ CALL C:\Users\Andy\Anaconda3\Scripts\activate.bat C:\Users\Andy\Anaconda3\envs\p
 start "" "C:\Program Files\Sublime Text 3\sublime_text.exe
 ```
 
-A [superuser.com post](https://superuser.com/questions/192550/why-wont-cmd-exit-after-execution-of-batch-file)
-was helpful as a previous version of the launcher would leave a `cmd.exe` window
-open behind Sublime Text.
+A [superuser.com post](https://superuser.com/questions/192550/why-wont-cmd-exit-after-execution-of-batch-file) was helpful as a previous version of the launcher would leave a `cmd.exe` window open behind Sublime Text.
 
 Install Git for Windows
 -----------------------
 
-[Git for Windows](https://git-scm.com/downloads) contains gitk. A quick search
-didn't reveal an easy way just to install gitk so unfortunately  there’s a
-little duplication as git is managed by Anaconda.
+[Git for Windows](https://git-scm.com/downloads) contains gitk. A quick search didn't reveal an easy way just to install gitk so unfortunately  there’s a little duplication as git is managed by Anaconda.
 
-I initially wanted to keep things clean and make no additions to my PATH,
-however, this meant a cmder shell couldn't find gitk so I left the minimal PATH
-additions in place when setting it up:
+I initially wanted to keep things clean and make no additions to my PATH, however, this meant a cmder shell couldn't find gitk so I left the minimal PATH additions in place when setting it up:
 
 [![Creating a new cmder task](/img/posts/2019-02-12-unix-python-dev-windows7/git-windows-path.jpg)](/img/posts/2019-02-12-unix-python-dev-windows7/git-windows-path.jpg)
 
+Git Setup
+---------
 
+You may need to run the following to get you setup and provide password convenience:
+```
+git config --global user.email "your@email.com"
+git config --global user.name "Your Name"
+git config --global credential.helper wincred
+```
+
+[The github docs](https://help.github.com/en/articles/caching-your-github-password-in-git) were helpful here.
 
 Conclusions
 ===========
 
-The [Conda task docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/index.html)
-have lots of useful information and examples.
+The [Conda task docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/index.html) have lots of useful information and examples.
 
-I was getting what looked like Python execution errors if I ran conda commands
-in the py2 environment:
+I was getting what looked like Python execution errors if I ran conda commands in the py2 environment:
 
 [![Conda Python errors](/img/posts/2019-02-12-unix-python-dev-windows7/conda-python-errors.jpg)](/img/posts/2019-02-12-unix-python-dev-windows7/conda-python-errors.jpg)
 
-I believe this is because I installed Anaconda 3 which uses Python 3 by default
-so it's calling Python 2 but expecting it to be Python 3. I didn't get these
-errors if I ran the conda commands in the `base` env.
+I believe this is because I installed Anaconda 3 which uses Python 3 by default so it's calling Python 2 but expecting it to be Python 3. I didn't get these errors if I ran the conda commands in the `base` env.
 
-It would be interesting to see how usable a VM running Ubuntu would be as
-alternative to this setup.
+It would be interesting to see how usable a VM running Ubuntu would be as alternative to this setup.
 
-Pip also installs packages and can be used as normal inside a conda environment
-(as per [the docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-non-conda-packages)).
+Pip also installs packages and can be used as normal inside a conda environment (as per [the docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-non-conda-packages)).

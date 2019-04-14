@@ -1,0 +1,49 @@
+#google-custom-search {
+  margin-top: 50px;
+}
+
+input.gsc-input,
+.gsc-input-box,
+.gsc-input-box-hover,
+.gsc-input-box-focus,
+.gsc-search-button,
+.gsc-selected-option-container {
+  box-sizing: content-box; 
+  line-height: normal;
+}
+
+/* --- Tables, this is overriding main.css to "protect" the Google Custom Search element --- */
+
+table {
+  padding: 0;
+}
+table tr {
+  border-top: 1px solid #ECF3FA;
+  background-color: #ECF3FA;
+  margin: 0;
+  padding: 0;
+}
+table tr:nth-child(2n) {
+  background-color: #ECF3FA;
+}
+table tr th {
+  font-weight: bold;
+  border: 1px solid #ECF3FA;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+table tr td {
+  border: 0px solid #ECF3FA;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+table tr th :first-child,
+table tr td :first-child {
+  margin-top: 0;
+}
+table tr th :last-child,
+table tr td :last-child {
+  margin-bottom: 0;
+}

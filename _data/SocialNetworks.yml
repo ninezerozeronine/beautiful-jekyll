@@ -95,3 +95,9 @@ yelp:
   name: "Yelp"
   baseURL: "https://{{ site.author.yelp }}.yelp.com"
   icon: "fa-yelp"
+
+flickr:
+  name: "Flickr"
+  baseURL: "https://www.flickr.com/photos/"
+  icon: "fa-flickr"
+
